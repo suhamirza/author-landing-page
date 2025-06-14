@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/30 shadow-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[2px] bg-white/20 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}          <div className="flex-shrink-0">

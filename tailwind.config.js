@@ -33,13 +33,20 @@ export default {
         'border-gold': '#AE7032',
         'shadow-gold': 'rgba(212, 163, 115, 0.63)',
         'sage-green': '#E4DCC5',
-      },
-      dropShadow: {
+      },      dropShadow: {
         'gold-glow': [
           '0 0 19px rgba(212, 163, 115, 0.63)',
           '0 16px 20px rgba(212, 163, 115, 0.5)',
           '0 0 30px rgba(212, 163, 115, 0.3)'
         ],
+      },      animation: {
+        'scroll': 'scroll 30s linear infinite',
+      },
+      keyframes: {
+        'scroll': {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        }
       }
     },
   },
