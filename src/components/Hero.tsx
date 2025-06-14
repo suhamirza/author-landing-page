@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
             href="https://www.amazon.com/Facing-Fate-Dublin-Sisters-Book-ebook/dp/B0DXDMGGZ9/ref=sr_1_1?crid=3N20QB1NN63FM&dib=eyJ2IjoiMSJ9.uZl-SpLWydzEwRhjwb0dVQ.FavJBcTNd8V_xHdK2y8wmJNci_FXRrKEyavaxPlN2_4&dib_tag=se&keywords=facing+fate+hayat+khan&qid=1749862682&sprefix=facing+fate+haya%2Caps%2C226&sr=8-1"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-gold border-2 sm:border-3 lg:border-4 rounded-2xl border-dark-brown px-8 sm:px-12 py-3 sm:py-4 font-sans font-black text-white text-lg sm:text-xl uppercase tracking-wider hover:bg-light-gold transition-colors duration-300 shadow-lg"
+            className="inline-block bg-gold border-2 sm:border-3 lg:border-3 rounded-2xl border-dark-brown px-8 sm:px-12 py-3 sm:py-4 font-sans font-black text-white text-lg sm:text-xl uppercase tracking-wider hover:bg-light-gold transition-colors duration-300 shadow-lg"
           >
             BUY NOW
           </a>

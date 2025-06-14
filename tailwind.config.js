@@ -25,14 +25,15 @@ export default {
       colors: {
         'light-green': 'rgba(228, 220, 197, 0.4)',
         'white': '#FFFFFF',
-        'black': '#000000',
-        'dark-brown': '#6A3500',
+        'black': '#000000',        'dark-brown': '#6A3500',
         'light-brown': '#A65E2E',
         'gold': '#D4A373',
+        'divider-gold': '#D19254',
         'light-gold': 'rgba(212, 163, 115, 0.84)',
         'border-gold': '#AE7032',
         'shadow-gold': 'rgba(212, 163, 115, 0.63)',
         'sage-green': '#E4DCC5',
+        'light-sage-green': '#E7E0CF',
       },      dropShadow: {
         'gold-glow': [
           '0 0 19px rgba(212, 163, 115, 0.63)',
