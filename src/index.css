@@ -1,2 +1,8 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
+
+@layer base {
+  .embla { @apply overflow-hidden; }
+  .embla__container { @apply flex; }
+  .embla__slide { @apply flex-none min-w-0 relative; }
+}
