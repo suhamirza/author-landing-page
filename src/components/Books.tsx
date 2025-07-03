@@ -1,5 +1,6 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import FadeContent from './Animations/FadeContent/FadeContent';
 
 const Books: React.FC = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
@@ -15,7 +16,7 @@ const Books: React.FC = () => {
     {
       id: 1,
       title: "Facing Fate",
-      image: "/src/assets/images/bookone.jpg",
+      image: "/src/assets/images/bookone.webp",
       available: true,
       blurb: `A mesmerising tale of love, passion, betrayal and revenge.
 
@@ -30,7 +31,7 @@ Life was never fair. Those who should have protected him treated him unjustly, a
     },    {
       id: 2,
       title: "Forgiving You",
-      image: "/src/assets/images/booktwo.jpeg",
+      image: "/src/assets/images/booktwo.webp",
       available: true,
       blurb: `A stirring journey of love and redemption where forgiveness mends hearts and love redeems even the darkest of souls.
 
@@ -97,19 +98,22 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
       <div id="books" className="w-full bg-white py-8 sm:py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-LEFT mb-12">
-          <h2 className="font-serif font-semibold text-border-gold text-lg sm:text-xl mb-2">
-            DUBLIN SISTERS
-          </h2>
-          <h1 className="font-display font-bold text-black text-4xl sm:text-5xl lg:text-6xl mb-4">
-            BOOKS
-          </h1>
-          {/* Divider Line */}
-          <div className="w-16 h-1 bg-gold mb-8"></div>
-        </div>
+        <FadeContent duration={800} delay={200} blur={false}>
+          <div className="text-LEFT mb-12">
+            <h2 className="font-serif font-semibold text-border-gold text-lg sm:text-xl mb-2">
+              DUBLIN SISTERS
+            </h2>
+            <h1 className="font-display font-bold text-black text-4xl sm:text-5xl lg:text-6xl mb-4">
+              BOOKS
+            </h1>
+            {/* Divider Line */}
+            <div className="w-16 h-1 bg-gold mb-8"></div>
+          </div>
+        </FadeContent>
 
         {/* Embla Carousel */}
-        <div className="relative">          {/* Previous Button */}
+        <FadeContent duration={800} delay={400} blur={false}>
+          <div className="relative">          {/* Previous Button */}
           <button
             onClick={scrollPrev}
             className="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 z-10 group cursor-pointer"
@@ -177,6 +181,7 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
               ))}
             </div>
           </div>        </div>
+        </FadeContent>
       </div>
     </div>    {/* Modal */}    {isModalOpen && (
       <div className={`fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm transition-all duration-300 ease-out ${showModal ? 'opacity-100' : 'opacity-0'}`}>

@@ -1,4 +1,5 @@
 import React from 'react';
+import FadeContent from './Animations/FadeContent/FadeContent';
 
 const About: React.FC = () => {
   return (
@@ -9,42 +10,48 @@ const About: React.FC = () => {
           {/* Text Content */}
           <div className="flex-1 max-w-2xl">
             {/* Header */}
-            <div className="mb-8">
-              <h2 className="font-serif font-semibold text-border-gold text-lg sm:text-xl mb-2">
-                ABOUT THE
-              </h2>
-              <h1 className="font-display font-bold text-black text-4xl sm:text-5xl lg:text-6xl mb-4">
-                AUTHOR
-              </h1>
-              {/* Divider Line */}
-              <div className="w-16 h-1 bg-divider-gold mb-8"></div>
-            </div>
+            <FadeContent duration={800} delay={200} blur={false}>
+              <div className="mb-8">
+                <h2 className="font-serif font-semibold text-border-gold text-lg sm:text-xl mb-2">
+                  ABOUT THE
+                </h2>
+                <h1 className="font-display font-bold text-black text-4xl sm:text-5xl lg:text-6xl mb-4">
+                  AUTHOR
+                </h1>
+                {/* Divider Line */}
+                <div className="w-16 h-1 bg-divider-gold mb-8"></div>
+              </div>
+            </FadeContent>
             
             {/* Description */}
-            <div className="space-y-6 text-black font-serif font-medium text-base sm:text-lg leading-relaxed">
-              <p>
-                Hayat Khan is an author of contemporary romance, specializing in stories that explore the 
-                lives of Muslim, South Asian, and immigrant characters. Her novels delve into love stories that 
-                endure and flourish amidst societal pressures, religious obligations, and family expectations.
-              </p>
-              
-              <p>
-                Hayat is deeply passionate about crafting narratives that not only resonate emotionally but 
-                also courageously address cultural taboos, leaving a profound and lasting impact on the heart.
-              </p>
-            </div>
+            <FadeContent duration={800} delay={400} blur={false}>
+              <div className="space-y-6 text-black font-serif font-medium text-base sm:text-lg leading-relaxed">
+                <p>
+                  Hayat Khan is an author of contemporary romance, specializing in stories that explore the 
+                  lives of Muslim, South Asian, and immigrant characters. Her novels delve into love stories that 
+                  endure and flourish amidst societal pressures, religious obligations, and family expectations.
+                </p>
+                
+                <p>
+                  Hayat is deeply passionate about crafting narratives that not only resonate emotionally but 
+                  also courageously address cultural taboos, leaving a profound and lasting impact on the heart.
+                </p>
+              </div>
+            </FadeContent>
           </div>
           
           {/* Image */}
           <div className="flex-shrink-0">            
-            <div className="relative">
-              <img 
-                src="/src/assets/images/hijabi.PNG" 
-                alt="Hayat Khan - Author" 
-                className="w-72 sm:w-80 md:w-96 lg:w-[26rem] xl:w-[30rem] h-auto"
-              />
-              {/* Decorative elements could be added here if needed */}
-            </div>
+            <FadeContent duration={800} delay={600} blur={false}>
+              <div className="relative">
+                <img 
+                  src="/src/assets/images/hijabi.webp" 
+                  alt="Hayat Khan - Author" 
+                  className="w-72 sm:w-80 md:w-96 lg:w-[26rem] xl:w-[30rem] h-auto"
+                />
+                {/* Decorative elements could be added here if needed */}
+              </div>
+            </FadeContent>
           </div>
           
         </div>
