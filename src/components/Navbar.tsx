@@ -35,9 +35,10 @@ const Navbar: React.FC = () => {
         ? 'bg-white backdrop-blur-none' 
         : 'backdrop-blur-[2px] bg-white/20'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-0.5">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-0.5">
         <div className="flex justify-between items-center h-12">
-          {/* Logo */}          <div className="flex-shrink-0">
+          {/* Logo */}
+          <div className="flex-shrink-0 ml-4">
             <img 
               src={logoImage} 
               alt="HK Logo" 
@@ -48,8 +49,9 @@ const Navbar: React.FC = () => {
             />
           </div>
 
-          {/* Navigation Links */}          <div className="hidden md:block">
-            <div className="ml-8 flex items-baseline space-x-6">
+          {/* Navigation Links */}
+          <div className="hidden md:block mr-4">
+            <div className="flex items-baseline space-x-6">
               <button 
                 onClick={() => scrollToSection('home')} 
                 className="text-dark-brown font-sans font-extrabold text-base hover:text-light-brown transition-colors duration-300 cursor-pointer"
@@ -72,7 +74,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden mr-4">
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-dark-brown hover:text-gold focus:outline-none focus:ring-2 focus:ring-gold"
