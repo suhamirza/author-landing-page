@@ -97,19 +97,21 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
   };
   return (
     <>
-      <div id="books" className="w-full bg-white py-8 sm:py-12 lg:py-16">
+      <div id="books" className="w-full bg-white py-16 sm:py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <FadeContent duration={800} delay={200} blur={false}>
-          <div className="text-LEFT mb-12">
-            <h2 className="font-serif font-semibold text-border-gold text-lg sm:text-xl mb-2">
-              DUBLIN SISTERS
-            </h2>
-            <h1 className="font-display font-bold text-black text-4xl sm:text-5xl lg:text-6xl mb-4">
-              BOOKS
-            </h1>
-            {/* Divider Line */}
-            <div className="w-16 h-1 bg-gold mb-8"></div>
+          <div className="flex justify-center lg:justify-start mb-8">
+            <div className="max-w-xl text-center lg:text-left lg:ml-16 xl:ml-24">
+              <h2 className="font-serif font-semibold text-border-gold text-base sm:text-lg mb-2">
+                DUBLIN SISTERS
+              </h2>
+              <h1 className="font-display font-bold text-black text-3xl sm:text-4xl lg:text-5xl mb-3">
+                BOOKS
+              </h1>
+              {/* Divider Line */}
+              <div className="w-12 h-1 bg-divider-gold mb-6 mx-auto lg:mx-0"></div>
+            </div>
           </div>
         </FadeContent>
 
@@ -154,10 +156,10 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
                         <img
                           src={book.image}
                           alt={book.title}
-                          className="w-64 md:w-80 h-auto rounded-lg shadow-xl mx-auto"
+                          className="w-48 md:w-64 h-auto rounded-lg shadow-xl mx-auto"
                         />
                       ) : (
-                        <div className="w-64 md:w-80 aspect-[3/4] bg-gray-300 rounded-lg shadow-xl mx-auto flex items-center justify-center">
+                        <div className="w-48 md:w-64 aspect-[3/4] bg-gray-300 rounded-lg shadow-xl mx-auto flex items-center justify-center">
                           <div className="text-center px-4">
                             <h3 className="font-display font-bold text-lg text-gray-600">
                               {book.title}
@@ -205,10 +207,10 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
                 <img 
                   src={books[selectedBook].image} 
                   alt={books[selectedBook].title}
-                  className="w-48 sm:w-64 lg:w-80 h-auto shadow-xl rounded-lg"
+                  className="w-36 sm:w-48 lg:w-64 h-auto shadow-xl rounded-lg"
                 />
               ) : (
-                <div className="w-48 sm:w-64 lg:w-80 h-64 sm:h-80 lg:h-96 bg-gray-300 rounded-lg shadow-xl flex flex-col items-center justify-center text-gray-600">
+                <div className="w-36 sm:w-48 lg:w-64 h-48 sm:h-64 lg:h-80 bg-gray-300 rounded-lg shadow-xl flex flex-col items-center justify-center text-gray-600">
                   <div className="text-center px-4">
                     <h3 className="font-display font-bold text-lg sm:text-xl mb-2">
                       {books[selectedBook].title}
@@ -223,10 +225,10 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
 
             {/* Blurb Content */}
             <div className="flex-1 max-w-2xl">
-              <h2 className="font-display font-bold text-black text-2xl sm:text-3xl lg:text-4xl mb-6">
+              <h2 className="font-display font-bold text-black text-xl sm:text-2xl lg:text-3xl mb-4">
                 {books[selectedBook].title}
               </h2>
-                <div className="font-serif text-black text-base sm:text-lg leading-relaxed">
+                <div className="font-serif text-black text-sm sm:text-base leading-relaxed">
                 {formatBlurb(books[selectedBook].blurb)}
               </div>
 
@@ -236,7 +238,7 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
                     href="https://www.amazon.com/Facing-Fate-Dublin-Sisters-Book-ebook/dp/B0DXDMGGZ9"
                     target="_blank"
                     rel="noopener noreferrer" 
-                    className="inline-block bg-gold border-2 sm:border-2 lg:border-3 rounded-2xl border-dark-brown px-6 sm:px-8 py-2 sm:py-3 font-sans font-black text-white text-base sm:text-lg uppercase tracking-wider hover:bg-light-gold transition-colors duration-300 shadow-lg"
+                    className="inline-block bg-gold border-2 sm:border-2 lg:border-3 rounded-xl border-dark-brown px-4 sm:px-6 py-2 sm:py-2 font-sans font-black text-white text-sm sm:text-base uppercase tracking-wider hover:bg-light-gold transition-colors duration-300 shadow-lg"
                   >
                     BUY NOW
                   </a>
