@@ -44,14 +44,28 @@ const Hero: React.FC = () => {
             threshold={0.1}
             rootMargin="-50px"
           />
-          <FadeContent duration={600} delay={200} blur={false}>
+          <FadeContent duration={600} delay={800} blur={false}>
             <a 
               href="https://www.amazon.com/Forgiving-You-Dublin-Sisters-Book-ebook/dp/B0FD9H4HQ6?ref_=ast_author_mpb"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-gold border-2 sm:border-3 lg:border-3 rounded-2xl border-dark-brown px-8 sm:px-12 py-3 sm:py-4 font-sans font-black text-white text-lg sm:text-xl uppercase tracking-wider hover:bg-light-gold transition-colors duration-300 shadow-lg"
+              className="group relative inline-block bg-gold border-2 sm:border-3 lg:border-3 rounded-2xl border-dark-brown px-8 sm:px-12 py-3 sm:py-4 font-sans font-black text-white text-lg sm:text-xl uppercase tracking-wider transition-all duration-500 ease-out shadow-lg hover:shadow-2xl hover:shadow-gold/50 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
             >
-              BUY NOW
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-gold via-light-gold to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+              
+              {/* Shimmer effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out"></div>
+              </div>
+              
+              {/* Pulsing ring */}
+              <div className="absolute inset-0 rounded-2xl border-2 border-white/50 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 ease-out"></div>
+              
+              {/* Button text */}
+              <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+                BUY NOW
+              </span>
             </a>
           </FadeContent>
         </div>
