@@ -1,5 +1,6 @@
 import React from 'react';
 import FadeContent from './Animations/FadeContent/FadeContent';
+import logoImage from '../assets/images/logo.webp';
 
 const Footer: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ const Footer: React.FC = () => {
                 {/* Logo */}
                 <div className="flex items-center justify-center lg:justify-start mb-4">
                   <img 
-                    src="/assets/images/logo.webp" 
+                    src={logoImage} 
                     alt="HK Logo" 
                     className="w-16 h-16 sm:w-20 sm:h-20"
                     style={{

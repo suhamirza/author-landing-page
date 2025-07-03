@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logoImage from '../assets/images/logo.webp';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,7 +36,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}          <div className="flex-shrink-0">
             <img 
-              src="/assets/images/logo.webp" 
+              src={logoImage} 
               alt="HK Logo" 
               className="h-12 w-auto"
               style={{

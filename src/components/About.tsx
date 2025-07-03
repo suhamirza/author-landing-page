@@ -1,5 +1,6 @@
 import React from 'react';
 import FadeContent from './Animations/FadeContent/FadeContent';
+import authorImage from '../assets/images/hijabi.webp';
 
 const About: React.FC = () => {
   return (
@@ -45,7 +46,7 @@ const About: React.FC = () => {
             <FadeContent duration={800} delay={600} blur={false}>
               <div className="relative">
                 <img 
-                  src="/assets/images/hijabi.webp" 
+                  src={authorImage} 
                   alt="Hayat Khan - Author" 
                   className="w-72 sm:w-80 md:w-96 lg:w-[26rem] xl:w-[30rem] h-auto"
                 />

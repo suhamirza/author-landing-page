@@ -1,6 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import FadeContent from './Animations/FadeContent/FadeContent';
+import bookOneImage from '../assets/images/bookone.webp';
+import bookTwoImage from '../assets/images/booktwo.webp';
 
 const Books: React.FC = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
@@ -16,7 +18,7 @@ const Books: React.FC = () => {
     {
       id: 1,
       title: "Facing Fate",
-      image: "/assets/images/bookone.webp",
+      image: bookOneImage,
       available: true,
       blurb: `A mesmerising tale of love, passion, betrayal and revenge.
 
@@ -31,7 +33,7 @@ Life was never fair. Those who should have protected him treated him unjustly, a
     },    {
       id: 2,
       title: "Forgiving You",
-      image: "/assets/images/booktwo.webp",
+      image: bookTwoImage,
       available: true,
       blurb: `A stirring journey of love and redemption where forgiveness mends hearts and love redeems even the darkest of souls.
 

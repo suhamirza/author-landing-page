@@ -1,6 +1,8 @@
 import React from 'react';
 import FadeContent from './Animations/FadeContent/FadeContent';
 import SplitText from './TextAnimations/SplitText/SplitText';
+import backgroundImage from '../assets/images/background.webp';
+import bookTwoImage from '../assets/images/booktwo.webp';
 
 const Hero: React.FC = () => {
   return (
@@ -9,7 +11,7 @@ const Hero: React.FC = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/assets/images/background.webp')`
+          backgroundImage: `url(${backgroundImage})`
         }}
       />      {/* Hero Content */}
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-end lg:justify-between min-h-screen px-4 sm:px-8 lg:px-40 pt-40 sm:pt-32 lg:pt-0 pb-24 lg:pb-0">
@@ -27,7 +29,7 @@ const Hero: React.FC = () => {
               
               {/* Book Image with enhanced hover effect */}
               <img 
-                src="/assets/images/booktwo.webp" 
+                src={bookTwoImage} 
                 alt="Facing Fate Book Cover" 
                 className="w-48 sm:w-64 md:w-72 lg:w-80 h-auto shadow-2xl"
               />
