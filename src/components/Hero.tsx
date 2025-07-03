@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative min-h-screen">
+    <div id="home" className="relative min-h-screen">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
             <div className="absolute bottom-0 left-0 w-16 sm:w-24 lg:w-48 h-16 sm:h-24 lg:h-48 border-l-2 border-b-2 sm:border-l-3 sm:border-b-3 lg:border-l-4 lg:border-b-4 border-border-gold"></div>
               {/* Book Image - Responsive size */}
             <img 
-              src="/src/assets/images/bookone.jpg" 
+              src="/src/assets/images/booktwo.jpeg" 
               alt="Facing Fate Book Cover" 
               className="w-48 sm:w-64 md:w-72 lg:w-80 h-auto shadow-2xl"
             />
@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
             COPY NOW!
           </h1>
             <a 
-            href="https://www.amazon.com/Facing-Fate-Dublin-Sisters-Book-ebook/dp/B0DXDMGGZ9/ref=sr_1_1?crid=3N20QB1NN63FM&dib=eyJ2IjoiMSJ9.uZl-SpLWydzEwRhjwb0dVQ.FavJBcTNd8V_xHdK2y8wmJNci_FXRrKEyavaxPlN2_4&dib_tag=se&keywords=facing+fate+hayat+khan&qid=1749862682&sprefix=facing+fate+haya%2Caps%2C226&sr=8-1"
+            href="https://www.amazon.com/Forgiving-You-Dublin-Sisters-Book-ebook/dp/B0FD9H4HQ6?ref_=ast_author_mpb"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-gold border-2 sm:border-3 lg:border-3 rounded-2xl border-dark-brown px-8 sm:px-12 py-3 sm:py-4 font-sans font-black text-white text-lg sm:text-xl uppercase tracking-wider hover:bg-light-gold transition-colors duration-300 shadow-lg"

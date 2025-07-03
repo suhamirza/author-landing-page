@@ -12,6 +12,19 @@ const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navbarHeight = 80; // Account for fixed navbar height
+      const targetPosition = element.offsetTop - navbarHeight;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out shadow-md ${
       isScrolled 
@@ -33,24 +46,24 @@ const Navbar: React.FC = () => {
 
           {/* Navigation Links */}          <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a 
-                href="#home" 
-                className="text-dark-brown font-sans font-extrabold text-lg hover:text-light-brown transition-colors duration-300"
+              <button 
+                onClick={() => scrollToSection('home')} 
+                className="text-dark-brown font-sans font-extrabold text-lg hover:text-light-brown transition-colors duration-300 cursor-pointer"
               >
                 Home
-              </a>
-              <a 
-                href="#about" 
-                className="text-dark-brown font-sans font-extrabold text-lg hover:text-light-brown transition-colors duration-300"
+              </button>
+              <button 
+                onClick={() => scrollToSection('about')} 
+                className="text-dark-brown font-sans font-extrabold text-lg hover:text-light-brown transition-colors duration-300 cursor-pointer"
               >
                 About
-              </a>
-              <a 
-                href="#books" 
-                className="text-dark-brown font-sans font-extrabold text-lg hover:text-light-brown transition-colors duration-300"
+              </button>
+              <button 
+                onClick={() => scrollToSection('books')} 
+                className="text-dark-brown font-sans font-extrabold text-lg hover:text-light-brown transition-colors duration-300 cursor-pointer"
               >
                 Books
-              </a>
+              </button>
             </div>
           </div>
 

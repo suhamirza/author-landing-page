@@ -51,7 +51,7 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
       title: "Third Book", 
       image: "",
       available: false,
-      blurb: "The third book in the Dublin Sisters series will complete the trilogy with an unforgettable conclusion. More details will be revealed as the series progresses!"
+      blurb: "The third book in the Dublin Sisters series will come out soon!"
     }
   ];
 
@@ -94,7 +94,7 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
   };
   return (
     <>
-      <div className="w-full bg-white py-8 sm:py-12 lg:py-16">
+      <div id="books" className="w-full bg-white py-8 sm:py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-LEFT mb-12">
