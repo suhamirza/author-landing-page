@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}          <div className="flex-shrink-0">
             <img 
-              src="/src/assets/images/logo.webp" 
+              src="/assets/images/logo.webp" 
               alt="HK Logo" 
               className="h-12 w-auto"
               style={{

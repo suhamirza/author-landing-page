@@ -7,7 +7,7 @@ const Divider: React.FC = () => {
       <div className="flex justify-center items-center max-w-md">
         <FadeContent duration={800} delay={200} blur={false}>
           <img 
-            src="/src/assets/images/flowers.webp" 
+            src="/assets/images/flowers.webp" 
             alt="Floral Divider" 
             className="w-64 sm:w-80 md:w-96 lg:w-full h-auto opacity-90"
           />

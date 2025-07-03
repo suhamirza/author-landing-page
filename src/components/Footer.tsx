@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
                 {/* Logo */}
                 <div className="flex items-center justify-center lg:justify-start mb-4">
                   <img 
-                    src="/src/assets/images/logo.webp" 
+                    src="/assets/images/logo.webp" 
                     alt="HK Logo" 
                     className="w-16 h-16 sm:w-20 sm:h-20"
                     style={{

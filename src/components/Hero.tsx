@@ -9,20 +9,25 @@ const Hero: React.FC = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/src/assets/images/background.webp')`
+          backgroundImage: `url('/assets/images/background.webp')`
         }}
       />      {/* Hero Content */}
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-end lg:justify-between min-h-screen px-4 sm:px-8 lg:px-40 pt-40 sm:pt-32 lg:pt-0 pb-24 lg:pb-0">
           {/* Book Cover - First on mobile, left on desktop */}
         <FadeContent duration={600} delay={200} blur={false}>
           <div className="flex-shrink-0 mb-8 lg:mb-0">          
-            <div className="bg-light-green p-4 sm:p-6 relative">
-              {/* Corner Borders - Responsive size and thickness */}
-              <div className="absolute top-0 right-0 w-16 sm:w-24 lg:w-48 h-16 sm:h-24 lg:h-48 border-r-2 border-t-2 sm:border-r-3 sm:border-t-3 lg:border-r-4 lg:border-t-4 border-border-gold"></div>
-              <div className="absolute bottom-0 left-0 w-16 sm:w-24 lg:w-48 h-16 sm:h-24 lg:h-48 border-l-2 border-b-2 sm:border-l-3 sm:border-b-3 lg:border-l-4 lg:border-b-4 border-border-gold"></div>
-                {/* Book Image - Responsive size */}
+            <div className="group bg-light-green p-4 sm:p-6 relative cursor-pointer transition-all duration-700 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-dark-brown/30 transform-gpu">
+              {/* Animated glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-border-gold/20 via-transparent to-border-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out rounded-lg"></div>
+              
+              {/* Enhanced corner borders with hover animation */}
+              <div className="absolute top-0 right-0 w-16 sm:w-24 lg:w-48 h-16 sm:h-24 lg:h-48 border-r-2 border-t-2 sm:border-r-3 sm:border-t-3 lg:border-r-4 lg:border-t-4 border-border-gold transition-all duration-500 group-hover:border-gold group-hover:scale-110"></div>
+              <div className="absolute bottom-0 left-0 w-16 sm:w-24 lg:w-48 h-16 sm:h-24 lg:h-48 border-l-2 border-b-2 sm:border-l-3 sm:border-b-3 lg:border-l-4 lg:border-b-4 border-border-gold transition-all duration-500 group-hover:border-gold group-hover:scale-110"></div>
+        
+              
+              {/* Book Image with enhanced hover effect */}
               <img 
-                src="/src/assets/images/booktwo.webp" 
+                src="/assets/images/booktwo.webp" 
                 alt="Facing Fate Book Cover" 
                 className="w-48 sm:w-64 md:w-72 lg:w-80 h-auto shadow-2xl"
               />

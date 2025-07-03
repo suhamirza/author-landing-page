@@ -45,7 +45,7 @@ const About: React.FC = () => {
             <FadeContent duration={800} delay={600} blur={false}>
               <div className="relative">
                 <img 
-                  src="/src/assets/images/hijabi.webp" 
+                  src="/assets/images/hijabi.webp" 
                   alt="Hayat Khan - Author" 
                   className="w-72 sm:w-80 md:w-96 lg:w-[26rem] xl:w-[30rem] h-auto"
                 />
