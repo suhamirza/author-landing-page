@@ -40,6 +40,18 @@ const Hero: React.FC = () => {
         {/* Text Content - Second on mobile, right on desktop */}
         <div className="flex-1 max-w-xl lg:ml-12 text-center mb-6 lg:mb-0">
           <SplitText
+            text="Recent Release: FORGIVING YOU"
+            className="font-sans font-semibold text-md sm:text-md md:text-md lg:text-lg xl:text-md text-light-brown mb-1 lg:mb-1 leading-tight"
+            delay={100}
+            duration={0.8}
+            ease="power3.out"
+            splitType="words"
+            from={{ opacity: 0, y: 50 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-50px"
+          />
+          <SplitText
             text="GET YOUR OWN COPY NOW!"
             className="font-display font-black text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-dark-brown mb-4 lg:mb-6 leading-tight"
             delay={100}
@@ -51,6 +63,7 @@ const Hero: React.FC = () => {
             threshold={0.1}
             rootMargin="-50px"
           />
+          
           <FadeContent duration={600} delay={800} blur={false}>
             <a 
               href="https://www.amazon.com/Forgiving-You-Dublin-Sisters-Book-ebook/dp/B0FD9H4HQ6?ref_=ast_author_mpb"

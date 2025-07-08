@@ -68,14 +68,21 @@ const Footer: React.FC = () => {
               </h3>
               <div className="w-10 h-1 bg-gold mb-4 mx-auto"></div>
               
-              <div className="flex justify-center">
+              <div className="space-y-3 flex flex-col items-center">
                 <a 
                   href="#about" 
                   className="font-serif font-medium text-dark-brown text-xs sm:text-sm hover:text-gold transition-colors duration-300 underline decoration-1 underline-offset-4"
                 >
+                  ABOUT
+                </a>
+                <a 
+                  href="https://www.amazon.com/stores/author/B0DR6GJ65B?ingress=0&visitId=c91dd43f-eb35-4a9e-87b7-05a161801480" 
+                  target='_blank'
+                  className="font-serif font-medium text-dark-brown text-xs sm:text-sm hover:text-gold transition-colors duration-300 underline decoration-1 underline-offset-4"
+                >
                   LEARN MORE
                 </a>
-              </div>
+            </div>
             </div>
           </FadeContent>
 

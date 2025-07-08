@@ -189,12 +189,12 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
       </div>
     </div>    {/* Modal */}    {isModalOpen && (
       <div className={`fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm transition-all duration-300 ease-out ${showModal ? 'opacity-100' : 'opacity-0'}`}>
-        <div className={`relative bg-light-sage-green rounded-2xl shadow-2xl max-w-5xl mx-4 p-6 sm:p-8 lg:p-12 max-h-[90vh] overflow-y-auto scrollbar-custom transform transition-all duration-300 ease-out ${showModal ? 'scale-100 opacity-100 translate-y-0' : 'scale-95 opacity-0 translate-y-4'}`}>
+        <div className={`relative bg-purple rounded-2xl shadow-2xl max-w-5xl mx-4 p-6 sm:p-8 lg:p-12 max-h-[90vh] overflow-y-auto scrollbar-custom transform transition-all duration-300 ease-out ${showModal ? 'scale-100 opacity-100 translate-y-0' : 'scale-95 opacity-0 translate-y-4'}`}>
           
           {/* Close Button */}
           <button
             onClick={closeModal}
-            className="absolute top-4 right-4 text-dark-brown hover:text-gold transition-colors duration-300"
+            className="absolute top-4 right-4 text-dark-purple hover:text-light-purple transition-colors duration-300"
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
@@ -238,9 +238,20 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
                     href="https://www.amazon.com/Facing-Fate-Dublin-Sisters-Book-ebook/dp/B0DXDMGGZ9"
                     target="_blank"
                     rel="noopener noreferrer" 
-                    className="inline-block bg-gold border-2 sm:border-2 lg:border-3 rounded-xl border-dark-brown px-4 sm:px-6 py-2 sm:py-2 font-sans font-black text-white text-sm sm:text-base uppercase tracking-wider hover:bg-light-gold transition-colors duration-300 shadow-lg"
+                    className="group relative inline-block bg-dark-purple rounded-2xl px-8 py-3 font-sans font-bold text-white text-sm sm:text-base uppercase tracking-wider transition-all duration-300 ease-out shadow-md hover:shadow-lg hover:shadow-light-purple/20 transform hover:scale-[1.01] hover:-translate-y-0.5 overflow-hidden"
                   >
-                    BUY NOW
+                    {/* Subtle color shift on hover */}
+                    <div className="absolute inset-0 bg-light-purple opacity-0 group-hover:opacity-20 transition-opacity duration-400 rounded-2xl"></div>
+                    
+                    {/* Minimal shimmer */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600 ease-out"></div>
+                    </div>
+                    
+                    {/* Button text */}
+                    <span className="relative z-10 transition-colors duration-300">
+                      BUY NOW
+                    </span>
                   </a>
                 </div>
               )}
