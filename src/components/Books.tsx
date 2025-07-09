@@ -1,15 +1,9 @@
-import React, { useCallback, useState } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
+import React, { useState } from 'react';
 import FadeContent from './Animations/FadeContent/FadeContent';
 import bookOneImage from '../assets/images/bookone.webp';
 import bookTwoImage from '../assets/images/booktwo.webp';
 
 const Books: React.FC = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ 
-    loop: true,
-    align: 'center',
-    containScroll: 'trimSnaps'
-  });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedBook, setSelectedBook] = useState<number>(0);
   const [showModal, setShowModal] = useState(false);
@@ -20,6 +14,7 @@ const Books: React.FC = () => {
       title: "Facing Fate",
       image: bookOneImage,
       available: true,
+      amazonUrl: "https://www.amazon.com/Facing-Fate-Dublin-Sisters-Book-ebook/dp/B0DXDMGGZ9",
       blurb: `A mesmerising tale of love, passion, betrayal and revenge.
 
 Nawal's Struggles
@@ -30,11 +25,13 @@ He had wanted her for as long as he could remember. The expectations and prying 
 
 Daud's Rage
 Life was never fair. Those who should have protected him treated him unjustly, and everything was taken from him. He would no longer sit back and accept his fate. He would fight for it. A seething blaze simmered within him, and he was ready to burn anyone who crossed his path—even those who were innocent.`
-    },    {
+    },
+    {
       id: 2,
       title: "Forgiving You",
       image: bookTwoImage,
       available: true,
+      amazonUrl: "https://www.amazon.com/Forgiving-You-Dublin-Sisters-Book-ebook/dp/B0FD9H4HQ6?ref_=ast_author_mpb", // Update with actual URL
       blurb: `A stirring journey of love and redemption where forgiveness mends hearts and love redeems even the darkest of souls.
 
 Nawal's Determination
@@ -54,23 +51,18 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
       title: "Third Book", 
       image: "",
       available: false,
+      amazonUrl: "",
       blurb: "The third book in the Dublin Sisters series will come out soon!"
     }
   ];
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
   const openModal = (bookIndex: number) => {
     setSelectedBook(bookIndex);
     setIsModalOpen(true);
     // Trigger animation after state update
     setTimeout(() => setShowModal(true), 10);
   };
+
   const closeModal = () => {
     setShowModal(false);
     // Close modal after animation completes
@@ -81,23 +73,26 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
     // Split the text by lines and format character headings
     const lines = text.split('\n');
     return lines.map((line, index) => {
+      // Create a unique key based on content and position
+      const uniqueKey = line ? `${line.slice(0, 20)}-${index}` : `empty-${index}`;
+      
       // Check if line contains character headings (ends with specific character names)
       if (line.includes("Struggles") || line.includes("Obsession") || line.includes("Rage") || 
           line.includes("Determination") || line.includes("Resolve") || line.includes("Redemption") || 
           line.includes("Strength")) {
         return (
-          <div key={index} className="font-bold mt-4 first:mt-0">
+          <div key={`heading-${uniqueKey}`} className="font-bold mt-4 first:mt-0">
             {line}
           </div>
         );
       }
       // Regular text
-      return line ? <div key={index}>{line}</div> : <div key={index} className="h-4"></div>;
+      return line ? <div key={`text-${uniqueKey}`}>{line}</div> : <div key={`space-${uniqueKey}`} className="h-4"></div>;
     });
   };
   return (
     <>
-      <div id="books" className="w-full bg-white py-16 sm:py-20 lg:py-28">
+      <div id="books" className="w-full bg-white pb-16 sm:pb-20 lg:pb-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <FadeContent duration={800} delay={200} blur={false}>
@@ -115,76 +110,81 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
           </div>
         </FadeContent>
 
-        {/* Embla Carousel */}
+        {/* Books Grid */}
         <FadeContent duration={800} delay={400} blur={false}>
-          <div className="relative">          {/* Previous Button */}
-          <button
-            onClick={scrollPrev}
-            className="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 z-10 group cursor-pointer"
-          >
-            <div className="relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-white/90 backdrop-blur-sm rounded-full shadow-2xl flex items-center justify-center border border-gold/30 group-hover:border-gold group-hover:bg-white group-hover:shadow-gold-glow transition-all duration-500 ease-out">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gold/10 to-light-gold/20 group-hover:from-gold/20 group-hover:to-light-gold/30 transition-all duration-500"></div>
-              <svg className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 text-dark-brown group-hover:text-gold transition-all duration-300 transform group-hover:-translate-x-0.5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/>
-              </svg>
-            </div>
-          </button>
-
-          {/* Next Button */}
-          <button
-            onClick={scrollNext}
-            className="absolute right-1 sm:right-4 top-1/2 -translate-y-1/2 z-10 group cursor-pointer"
-          >
-            <div className="relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-white/90 backdrop-blur-sm rounded-full shadow-2xl flex items-center justify-center border border-gold/30 group-hover:border-gold group-hover:bg-white group-hover:shadow-gold-glow transition-all duration-500 ease-out">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gold/10 to-light-gold/20 group-hover:from-gold/20 group-hover:to-light-gold/30 transition-all duration-500"></div>
-              <svg className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 text-dark-brown group-hover:text-gold transition-all duration-300 transform group-hover:translate-x-0.5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
-              </svg>
-            </div>
-          </button>
-
-          <div className="embla overflow-hidden mx-8 sm:mx-12 md:mx-16" ref={emblaRef}>
-            <div className="embla__container flex">
-              {books.map((book, index) => (
-                <div key={book.id} className="embla__slide flex-[0_0_100%] min-w-0 px-6 sm:px-8 md:px-4">
-                  <div className="text-center">
-                    <button 
-                      className="cursor-pointer transform hover:scale-105 transition-transform duration-300 bg-transparent border-none p-0"
-                      onClick={() => openModal(index)}
-                    >
-                      {book.available ? (
-                        <img
-                          src={book.image}
-                          alt={book.title}
-                          className="w-48 md:w-64 h-auto rounded-lg shadow-xl mx-auto"
-                        />
-                      ) : (
-                        <div className="w-48 md:w-64 aspect-[3/4] bg-gray-300 rounded-lg shadow-xl mx-auto flex items-center justify-center">
-                          <div className="text-center px-4">
-                            <h3 className="font-display font-bold text-lg text-gray-600">
-                              {book.title}
-                            </h3>
-                            <p className="font-serif text-sm text-gray-500 mt-2">
-                              COMING SOON!
-                            </p>
-                          </div>
-                        </div>
-                      )}
-                    </button>
-                    <h3 className="mt-4 font-display font-bold text-xl text-black">
-                      {book.title}
-                    </h3>
-                    <button
-                      onClick={() => openModal(index)}
-                      className="mt-2 font-display font-bold text-black text-sm hover:text-gold transition-colors duration-300 uppercase tracking-wider bg-transparent border-none cursor-pointer"
-                    >
-                      CLICK TO read BLURB
-                    </button>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
+            {books.map((book) => (
+              <div key={book.id} className="flex flex-col items-center text-center group">
+                {/* Book Cover */}
+                <div className="relative mb-6 transform transition-transform duration-300 group-hover:scale-105">
+                  {book.available ? (
+                    <img
+                      src={book.image}
+                      alt={book.title}
+                      className="w-48 sm:w-56 lg:w-64 h-auto rounded-lg shadow-xl"
+                    />
+                  ) : (
+                    <div className="w-48 sm:w-56 lg:w-64 h-64 sm:h-84 lg:h-102 bg-gray-300 rounded-lg shadow-xl flex items-center justify-center">
+                      <div className="text-center px-4">
+                        <h3 className="font-display font-bold text-lg text-gray-600">
+                          {book.title}
+                        </h3>
+                        <p className="font-serif text-sm text-gray-500 mt-2">
+                          COMING SOON!
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </div>
-              ))}
-            </div>
-          </div>        </div>
+
+                {/* Book Title */}
+                <h3 className="font-display font-bold text-xl lg:text-2xl text-black mb-4">
+                  {book.title}
+                </h3>
+
+                {/* Button Container */}
+                <div className="flex flex-col sm:flex-row gap-3 w-full max-w-sm">
+                  {/* View Blurb Button */}
+                  <button
+                    onClick={() => openModal(book.id - 1)} // Convert ID to index
+                    className={`group relative ${book.available ? 'flex-1' : 'px-4 py-2 mx-auto'} bg-white border-2 border-gold rounded-2xl ${book.available ? 'px-6 py-3' : ''} font-sans font-bold text-gold text-sm uppercase tracking-wider transition-all duration-300 ease-out shadow-md hover:shadow-lg hover:shadow-gold/20 transform hover:scale-[1.02] hover:-translate-y-0.5 overflow-hidden cursor-pointer`}
+                  >
+                    {/* Subtle background shift on hover */}
+                    <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                    
+                    {/* Minimal shimmer */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/20 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600 ease-out"></div>
+                    </div>
+                    
+                    {/* Button text */}
+                    <span className="relative z-10">View Blurb</span>
+                  </button>
+
+                  {/* Buy Now Button (only for available books) */}
+                  {book.available && (
+                    <a 
+                      href={book.amazonUrl}
+                      target="_blank"
+                      rel="noopener noreferrer" 
+                      className="group relative flex-1 bg-dark-purple rounded-2xl px-6 py-3 font-sans font-bold text-white text-sm uppercase tracking-wider transition-all duration-300 ease-out shadow-md hover:shadow-lg hover:shadow-light-purple/20 transform hover:scale-[1.02] hover:-translate-y-0.5 overflow-hidden inline-block text-center"
+                    >
+                      {/* Subtle color shift on hover */}
+                      <div className="absolute inset-0 bg-light-purple opacity-0 group-hover:opacity-20 transition-opacity duration-400 rounded-2xl"></div>
+                      
+                      {/* Minimal shimmer */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600 ease-out"></div>
+                      </div>
+                      
+                      {/* Button text */}
+                      <span className="relative z-10">Buy Now</span>
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </FadeContent>
       </div>
     </div>    {/* Modal */}    {isModalOpen && (
@@ -228,33 +228,9 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
               <h2 className="font-display font-bold text-black text-xl sm:text-2xl lg:text-3xl mb-4">
                 {books[selectedBook].title}
               </h2>
-                <div className="font-serif text-black text-sm sm:text-base leading-relaxed">
+              <div className="font-serif text-black text-sm sm:text-base leading-relaxed">
                 {formatBlurb(books[selectedBook].blurb)}
               </div>
-
-              {books[selectedBook].available && (
-                <div className="mt-8">
-                  <a 
-                    href="https://www.amazon.com/Facing-Fate-Dublin-Sisters-Book-ebook/dp/B0DXDMGGZ9"
-                    target="_blank"
-                    rel="noopener noreferrer" 
-                    className="group relative inline-block bg-dark-purple rounded-2xl px-8 py-3 font-sans font-bold text-white text-sm sm:text-base uppercase tracking-wider transition-all duration-300 ease-out shadow-md hover:shadow-lg hover:shadow-light-purple/20 transform hover:scale-[1.01] hover:-translate-y-0.5 overflow-hidden"
-                  >
-                    {/* Subtle color shift on hover */}
-                    <div className="absolute inset-0 bg-light-purple opacity-0 group-hover:opacity-20 transition-opacity duration-400 rounded-2xl"></div>
-                    
-                    {/* Minimal shimmer */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500">
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600 ease-out"></div>
-                    </div>
-                    
-                    {/* Button text */}
-                    <span className="relative z-10 transition-colors duration-300">
-                      BUY NOW
-                    </span>
-                  </a>
-                </div>
-              )}
             </div>
           </div>
         </div>
