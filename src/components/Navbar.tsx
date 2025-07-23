@@ -62,6 +62,14 @@ const Navbar: React.FC = () => {
     }
   };
 
+  const handleArtClick = () => {
+    setIsMobileMenuOpen(false);
+    // If we're already on art page, scroll to top
+    if (location.pathname === '/art') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out shadow-md ${
       isScrolled || location.pathname === '/books'
@@ -107,6 +115,13 @@ const Navbar: React.FC = () => {
               >
                 Books
               </Link>
+              <Link 
+                to="/art" 
+                onClick={handleArtClick}
+                className="text-dark-brown font-sans font-extrabold text-base hover:text-light-brown transition-colors duration-300 cursor-pointer"
+              >
+                Art
+              </Link>
             </div>
           </div>
 
@@ -151,6 +166,13 @@ const Navbar: React.FC = () => {
               className="block w-full text-left px-3 py-2 text-dark-brown font-sans font-extrabold text-base hover:text-light-brown hover:bg-light-sage-green/50 transition-all duration-300 rounded-md"
             >
               Books
+            </Link>
+            <Link 
+              to="/art" 
+              onClick={handleArtClick}
+              className="block w-full text-left px-3 py-2 text-dark-brown font-sans font-extrabold text-base hover:text-light-brown hover:bg-light-sage-green/50 transition-all duration-300 rounded-md"
+            >
+              Art
             </Link>
           </div>
         </div>
