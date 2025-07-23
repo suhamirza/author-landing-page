@@ -315,14 +315,26 @@ const Footer: React.FC = () => {
 
         {/* Divider Line */}
         <FadeContent duration={600} delay={1000} blur={false}>
-          <div className="w-full h-px bg-dark-brown/30 mt-6 lg:mt-4 mb-6 lg:mb-8"></div>
+          <div className="w-full h-px bg-dark-brown/30 mt-6 lg:mt-4 mb-2 lg:mb-2"></div>
         </FadeContent>
 
         {/* Copyright */}
         <FadeContent duration={600} delay={1200} blur={false}>
-          <div className="text-center">
+          <div className="hidden lg:flex lg:justify-between lg:items-center lg:pl-8 lg:pr-8">
             <p className="font-serif font-bold text-dark-brown text-xs sm:text-sm">
               Copyright © HAYAT KHAN
+            </p>
+            <p className="font-serif font-bold text-dark-brown text-xs sm:text-sm">
+              Designed with 💚 by Suha Mirza
+            </p>
+          </div>
+          {/* Mobile Copyright */}
+          <div className="lg:hidden flex justify-between items-center">
+            <p className="font-serif font-bold text-dark-brown text-xs sm:text-sm">
+              Copyright © HAYAT KHAN
+            </p>
+            <p className="font-serif font-bold text-dark-brown text-xs sm:text-sm">
+              Designed with 💚 by Suha Mirza
             </p>
           </div>
         </FadeContent>
