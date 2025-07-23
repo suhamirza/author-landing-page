@@ -96,7 +96,7 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <FadeContent duration={800} delay={200} blur={false}>
-          <div className="flex justify-center lg:justify-start mb-8">
+          <div className="flex justify-center lg:justify-start mt-20 mb-8">
             <div className="max-w-xl text-center lg:text-left lg:ml-16 xl:ml-24">
               <h2 className="font-serif font-semibold text-border-gold text-base sm:text-lg mb-2">
                 DUBLIN SISTERS

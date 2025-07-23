@@ -7,7 +7,7 @@ const Art: React.FC = () => {
     <div className="w-full min-h-screen bg-white">
       {/* Character Art Section */}
       <section id="character-art" className="w-full bg-white py-2 sm:py-2 lg:py-2">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto mt-20 px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <FadeContent duration={800} delay={200} blur={false}>
             <div className="flex justify-center lg:justify-start mb-12">
