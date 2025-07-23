@@ -329,7 +329,7 @@ const Footer: React.FC = () => {
             </p>
           </div>
           {/* Mobile Copyright */}
-          <div className="lg:hidden flex justify-between items-center">
+          <div className="lg:hidden flex flex-col items-center space-y-1">
             <p className="font-serif font-bold text-dark-brown text-xs sm:text-sm">
               Copyright © HAYAT KHAN
             </p>
