@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
                   <FaAmazon size={24} />
                 </a>
                 <a 
-                  href="https://www.tiktok.com/@hayatkhan_theauthor" 
+                  href="https://www.tiktok.com/@hayatkhan.theauthor" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-dark-brown hover:text-gold transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
@@ -295,7 +295,7 @@ const Footer: React.FC = () => {
                   <FaAmazon size={26} />
                 </a>
                 <a 
-                  href="https://www.tiktok.com/@hayatkhan_theauthor" 
+                  href="https://www.tiktok.com/@hayatkhan.theauthor" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-dark-brown hover:text-gold transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
