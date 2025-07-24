@@ -152,7 +152,22 @@ const Footer: React.FC = () => {
                     </a>
                   </div>
                 </div>
-
+                {/* Bonus Scenes Section */}  
+                <div className="text-center min-w-[120px]">
+                  <h3 className="font-display font-bold text-dark-brown text-base sm:text-lg mb-3">
+                    BONUS SCENES
+                  </h3>
+                  <div className="w-10 h-1 bg-gold mb-4 mx-auto"></div>
+                  
+                  <div className="space-y-3 flex flex-col items-center">
+                    <a 
+                      href="/bonus-scenes" 
+                      className="font-serif font-medium text-dark-brown text-xs sm:text-sm hover:text-gold transition-colors duration-300 underline decoration-1 underline-offset-4"
+                    >
+                      BONUS SCENES
+                    </a>
+                  </div>
+                </div>  
                 {/* Easy to add more sections here with same structure */}
                 
               </div>
@@ -261,7 +276,21 @@ const Footer: React.FC = () => {
                     </a>
                   </div>
                 </div>
-
+                {/* Bonus Scenes Section */}
+                <div className="text-center min-w-[120px]">
+                  <h3 className="font-display font-bold text-dark-brown text-base sm:text-lg mb-3">
+                    BONUS SCENES
+                  </h3>
+                  <div className="w-10 h-1 bg-gold mb-4 mx-auto"></div>
+                  <div className="space-y-3 flex flex-col items-center">
+                    <a 
+                      href="/bonus-scenes" 
+                      className="font-serif font-medium text-dark-brown text-xs sm:text-sm hover:text-gold transition-colors duration-300 underline decoration-1 underline-offset-4"
+                    >
+                      BONUS SCENES
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </FadeContent>

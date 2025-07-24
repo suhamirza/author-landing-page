@@ -122,6 +122,13 @@ const Navbar: React.FC = () => {
               >
                 Art
               </Link>
+              <Link 
+                to="/bonus-scenes" 
+                onClick={handleArtClick}
+                className="text-dark-brown font-sans font-extrabold text-base hover:text-light-brown transition-colors duration-300 cursor-pointer"
+              >
+                Bonus Scenes
+              </Link>
             </div>
           </div>
 
@@ -173,6 +180,13 @@ const Navbar: React.FC = () => {
               className="block w-full text-left px-3 py-2 text-dark-brown font-sans font-extrabold text-base hover:text-light-brown hover:bg-light-sage-green/50 transition-all duration-300 rounded-md"
             >
               Art
+            </Link>
+            <Link 
+              to="/bonus-scenes" 
+              onClick={handleArtClick}
+              className="block w-full text-left px-3 py-2 text-dark-brown font-sans font-extrabold text-base hover:text-light-brown hover:bg-light-sage-green/50 transition-all duration-300 rounded-md"
+            >
+              Bonus Scenes
             </Link>
           </div>
         </div>
