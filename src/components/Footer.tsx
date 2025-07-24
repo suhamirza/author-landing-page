@@ -167,6 +167,23 @@ const Footer: React.FC = () => {
                       BONUS SCENES
                     </a>
                   </div>
+                </div>
+
+                {/* FAQ Section */}  
+                <div className="text-center min-w-[120px]">
+                  <h3 className="font-display font-bold text-dark-brown text-base sm:text-lg mb-3">
+                    FAQ
+                  </h3>
+                  <div className="w-10 h-1 bg-gold mb-4 mx-auto"></div>
+                  
+                  <div className="space-y-3 flex flex-col items-center">
+                    <a 
+                      href="/faq" 
+                      className="font-serif font-medium text-dark-brown text-xs sm:text-sm hover:text-gold transition-colors duration-300 underline decoration-1 underline-offset-4"
+                    >
+                      QUESTIONS
+                    </a>
+                  </div>
                 </div>  
                 {/* Easy to add more sections here with same structure */}
                 
@@ -203,7 +220,7 @@ const Footer: React.FC = () => {
           {/* Links Section Mobile */}
           <FadeContent duration={800} delay={600} blur={false}>
             <div className="flex justify-center mb-12">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-16 max-w-lg sm:max-w-2xl justify-items-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 max-w-lg sm:max-w-4xl justify-items-center">
                 
                 {/* About Author Section */}
                 <div className="text-center min-w-[120px]">
@@ -288,6 +305,22 @@ const Footer: React.FC = () => {
                       className="font-serif font-medium text-dark-brown text-xs sm:text-sm hover:text-gold transition-colors duration-300 underline decoration-1 underline-offset-4"
                     >
                       BONUS SCENES
+                    </a>
+                  </div>
+                </div>
+
+                {/* FAQ Section */}
+                <div className="text-center min-w-[120px]">
+                  <h3 className="font-display font-bold text-dark-brown text-base sm:text-lg mb-3">
+                    FAQ
+                  </h3>
+                  <div className="w-10 h-1 bg-gold mb-4 mx-auto"></div>
+                  <div className="space-y-3 flex flex-col items-center">
+                    <a 
+                      href="/faq" 
+                      className="font-serif font-medium text-dark-brown text-xs sm:text-sm hover:text-gold transition-colors duration-300 underline decoration-1 underline-offset-4"
+                    >
+                      QUESTIONS
                     </a>
                   </div>
                 </div>
