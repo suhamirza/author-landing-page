@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
           {/* Links Section - Starts immediately after logo column */}
           <FadeContent duration={800} delay={600} blur={false}>
             <div className="flex justify-start items-start">
-              <div className="flex space-x-24">{/* Back to original spacing */}
+              <div className="flex space-x-12">{/* Back to original spacing */}
                 
                 {/* About Author Section */}
                 <div className="text-center min-w-[120px]">
