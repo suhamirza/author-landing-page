@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FadeContent from './Animations/FadeContent/FadeContent';
 import Divider from './Divider';
 import charArt1 from '../assets/images/charart1.webp';
+import charArt1pixel from '../assets/images/chartart1pixel.webp';
 
 const Art: React.FC = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -9,9 +10,9 @@ const Art: React.FC = () => {
 
   const characterArtImages = [
     {
-      src: charArt1,
+      src: charArt1pixel,
       title: "Nawal & Salman",
-      description: "Nawal & Salman, featured in Facing Fate & Forgiving you, seated on the jhoola"
+      description: "Stay tuned to see Nawal & Salman, featured in Facing Fate & Forgiving you, seated on the jhoola!"
     }
   ];
 
