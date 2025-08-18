@@ -34,7 +34,7 @@ const ArtPage: React.FC = () => {
       <SEO 
         title="Character Art & Dublin Sisterverse | Hayat Khan"
         description="Explore exclusive character artwork and beautiful illustrations from the Dublin Sisters series and extended universe by Hayat Khan."
-        url="https://hayatkhan.com/art"
+        url="https://hayatkhantheauthor.com/art"
         image="/src/assets/images/charart1.webp"
         imageAlt="Character Art from Dublin Sisters Series"
       />

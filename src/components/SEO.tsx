@@ -15,7 +15,7 @@ const SEO: React.FC<SEOProps> = ({
   description = "Discover the Dublin Sisters series by Hayat Khan - captivating novels featuring strong characters, beautiful storytelling, and immersive world-building.",
   image = "/src/assets/images/logo.webp",
   imageAlt = "Hayat Khan Author Logo",
-  url = "https://hayatkhan.com",
+  url = "https://hayatkhantheauthor.com",
   type = "website"
 }) => {
   return (

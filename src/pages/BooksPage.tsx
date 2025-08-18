@@ -14,7 +14,7 @@ const BooksPage: React.FC = () => {
       <SEO 
         title="Books - Dublin Sisters Series | Hayat Khan"
         description="Explore the Dublin Sisters book series by Hayat Khan. Discover captivating stories of sisterhood, love, and adventure set in beautiful Dublin."
-        url="https://hayatkhan.com/books"
+        url="https://hayatkhantheauthor.com/books"
         image="/src/assets/images/bookone.webp"
         imageAlt="Dublin Sisters Book Series by Hayat Khan"
       />

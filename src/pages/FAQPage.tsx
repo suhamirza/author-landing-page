@@ -14,7 +14,7 @@ const FAQPage: React.FC = () => {
       <SEO 
         title="FAQ - Frequently Asked Questions | Hayat Khan"
         description="Get answers to frequently asked questions about the Dublin Sisters series, Hayat Khan's writing process, and upcoming releases."
-        url="https://hayatkhan.com/faq"
+        url="https://hayatkhantheauthor.com/faq"
         image="/src/assets/images/logo.webp"
         imageAlt="FAQ about Dublin Sisters Series and Hayat Khan"
       />
