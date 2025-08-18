@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 
@@ -10,7 +11,13 @@ const FAQPage: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      {/* No Navbar here since it's already in App.tsx */}
+      <SEO 
+        title="FAQ - Frequently Asked Questions | Hayat Khan"
+        description="Get answers to frequently asked questions about the Dublin Sisters series, Hayat Khan's writing process, and upcoming releases."
+        url="https://hayatkhan.com/faq"
+        image="/src/assets/images/logo.webp"
+        imageAlt="FAQ about Dublin Sisters Series and Hayat Khan"
+      />
       <FAQ />
       <Footer />
     </div>

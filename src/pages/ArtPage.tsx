@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import SEO from '../components/SEO';
 import Art from '../components/Art';
 import Footer from '../components/Footer';
 
@@ -30,7 +31,13 @@ const ArtPage: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      {/* No Navbar here since it's already in App.tsx */}
+      <SEO 
+        title="Character Art & Dublin Sisterverse | Hayat Khan"
+        description="Explore exclusive character artwork and beautiful illustrations from the Dublin Sisters series and extended universe by Hayat Khan."
+        url="https://hayatkhan.com/art"
+        image="/src/assets/images/charart1.webp"
+        imageAlt="Character Art from Dublin Sisters Series"
+      />
       <Art />
       <Footer />
     </div>

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import Books from '../components/Books';
 import Footer from '../components/Footer';
 
@@ -10,7 +11,13 @@ const BooksPage: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      {/* No Navbar here since it's already in App.tsx */}
+      <SEO 
+        title="Books - Dublin Sisters Series | Hayat Khan"
+        description="Explore the Dublin Sisters book series by Hayat Khan. Discover captivating stories of sisterhood, love, and adventure set in beautiful Dublin."
+        url="https://hayatkhan.com/books"
+        image="/src/assets/images/bookone.webp"
+        imageAlt="Dublin Sisters Book Series by Hayat Khan"
+      />
       <Books />
       <Footer />
     </div>

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import Divider from '../components/Divider';
 import About from '../components/About';
@@ -25,6 +26,13 @@ const Home: React.FC = () => {
 
   return (
     <div>
+      <SEO 
+        title="Hayat Khan - Dublin Sisters Series Author"
+        description="Welcome to the official website of Hayat Khan, author of the Dublin Sisters series. Discover captivating novels featuring strong characters, beautiful storytelling, and immersive world-building."
+        url="https://hayatkhan.com"
+        image="/src/assets/images/logo.webp"
+        imageAlt="Hayat Khan - Author of Dublin Sisters Series"
+      />
       <Hero />
       <Divider />
       <About />
