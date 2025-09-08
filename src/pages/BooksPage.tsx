@@ -17,7 +17,7 @@ const BooksPage: React.FC = () => {
         title="Books - Dublin Sisters Series | Hayat Khan"
         description="Explore the Dublin Sisters book series by Hayat Khan. Discover captivating stories of sisterhood, love, and adventure set in beautiful Dublin."
         url="https://hayatkhantheauthor.com/books"
-        image="https://hayatkhantheauthor.com/images/bookone.webp"
+        image="https://hayatkhantheauthor.com/assets/bookone.webp"
         imageAlt="Dublin Sisters Book Series by Hayat Khan"
       />
       <Books />

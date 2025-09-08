@@ -13,7 +13,7 @@ interface SEOProps {
 const SEO: React.FC<SEOProps> = ({
   title = "Hayat Khan - Dublin Sisters Series",
   description = "Discover the Dublin Sisters series by Hayat Khan - captivating novels featuring strong characters, beautiful storytelling, and immersive world-building.",
-  image = "https://hayatkhantheauthor.com/images/logo.webp",
+  image = "https://hayatkhantheauthor.com/assets/logo.webp",
   imageAlt = "Hayat Khan Author Logo",
   url = "https://hayatkhantheauthor.com",
   type = "website"
