@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
         {/* Text Content - Second on mobile, right on desktop */}
         <div className="flex-1 max-w-xl lg:ml-12 text-center mb-6 lg:mb-0">
           <SplitText
-            text="COMING SOON: October 2025"
+            text="COMING SOON: October 10th 2025"
             className="font-sans font-semibold text-md sm:text-md md:text-md lg:text-lg xl:text-md text-light-brown mb-1 lg:mb-1 leading-tight"
             delay={100}
             duration={0.8}

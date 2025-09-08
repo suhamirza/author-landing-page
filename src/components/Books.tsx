@@ -255,7 +255,7 @@ the pieces of a marriage from breaking apart.
         onClick={closeModal}
       >
         <div 
-          className={`relative bg-purple rounded-2xl shadow-2xl max-w-5xl mx-4 p-6 sm:p-8 lg:p-12 max-h-[90vh] overflow-y-auto scrollbar-custom transform transition-all duration-300 ease-out ${showModal ? 'scale-100 opacity-100 translate-y-0' : 'scale-95 opacity-0 translate-y-4'}`}
+          className={`relative ${books[selectedBook].id === 3 ? 'bg-blue-100' : 'bg-purple-100'} rounded-2xl shadow-2xl max-w-5xl mx-4 p-6 sm:p-8 lg:p-12 max-h-[90vh] overflow-y-auto ${books[selectedBook].id === 3 ? 'scrollbar-blue' : 'scrollbar-custom'} transform transition-all duration-300 ease-out ${showModal ? 'scale-100 opacity-100 translate-y-0' : 'scale-95 opacity-0 translate-y-4'}`}
           onClick={(e) => e.stopPropagation()}
         >
           
