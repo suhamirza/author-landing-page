@@ -27,10 +27,10 @@ const Home: React.FC = () => {
   return (
     <div>
       <SEO 
-        title="Hayat Khan - Dublin Sisters Series Author"
+        title="Hayat Khan - Author of The Dublin Sisters Series"
         description="Welcome to the official website of Hayat Khan, author of the Dublin Sisters series. Discover captivating novels featuring strong characters, beautiful storytelling, and immersive world-building."
         url="https://hayatkhantheauthor.com"
-        image="https://hayatkhantheauthor.com/assets/logo.webp"
+        image="https://hayatkhantheauthor.com/assets/bookone.jpg"
         imageAlt="Hayat Khan - Author of Dublin Sisters Series"
       />
       <Hero />

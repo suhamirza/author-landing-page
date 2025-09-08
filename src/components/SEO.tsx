@@ -13,7 +13,7 @@ interface SEOProps {
 const SEO: React.FC<SEOProps> = ({
   title = "Hayat Khan - Dublin Sisters Series",
   description = "Discover the Dublin Sisters series by Hayat Khan - captivating novels featuring strong characters, beautiful storytelling, and immersive world-building.",
-  image = "https://hayatkhantheauthor.com/assets/logo.webp",
+  image = "https://hayatkhantheauthor.com/assets/logo.jpg",
   imageAlt = "Hayat Khan Author Logo",
   url = "https://hayatkhantheauthor.com",
   type = "website"
@@ -33,9 +33,11 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={absoluteImageUrl} />
+      <meta property="og:image:secure_url" content={absoluteImageUrl} />
       <meta property="og:image:alt" content={imageAlt} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta property="og:image:type" content="image/jpeg" />
       <meta property="og:url" content={url} />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content="Hayat Khan" />
