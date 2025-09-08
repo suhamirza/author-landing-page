@@ -1,12 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import FadeContent from './Animations/FadeContent/FadeContent';
 import bookOneImage from '../assets/images/bookone.webp';
-import bookTwoImage from '../assets/images/booktwo.webp';
+import bookTwoImage from '../assets/images/booktwo.webp'
+import bookThreeImage from '../assets/images/bookthree.webp';;
 
 const Books: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedBook, setSelectedBook] = useState<number>(0);
   const [showModal, setShowModal] = useState(false);
+  const [highlightedBook, setHighlightedBook] = useState<number | null>(null);
+
+  // Handle highlighting when component mounts
+  useEffect(() => {
+    // Check if we should highlight the third book based on URL hash
+    if (window.location.hash === '#book-3') {
+      // Scroll to the third book and highlight it
+      setTimeout(() => {
+        const bookElement = document.getElementById('book-3');
+        if (bookElement) {
+          bookElement.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+          });
+          setHighlightedBook(3);
+          
+          // Remove highlight after 4 seconds
+          setTimeout(() => {
+            setHighlightedBook(null);
+          }, 4000);
+        }
+      }, 500); // Small delay to ensure component is fully rendered
+    }
+  }, []);
+
+  // Handle escape key to close modal
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isModalOpen) {
+        closeModal();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isModalOpen]);
 
   const books = [
     {
@@ -48,11 +85,21 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
     },
     {
       id: 3,
-      title: "Third Book", 
-      image: "",
+      title: "Forgetting Love", 
+      image: bookThreeImage,
       available: false,
       amazonUrl: "",
-      blurb: "The third book in the Dublin Sisters series will come out soon!"
+      blurb: `A raw and heartfelt story of lost love, broken promises, and the battle against temptation.
+
+Samreen’s Resilience
+From the outside, my life looked perfect. I had married the love of my life and we had three young children. But that wasn’t the reality. The challenges of motherhood wrecked me. I was tired all the time and overwhelmed. I longed for his support, but I didn’t realise we were drifting apart… until it was too late.
+
+Faraz’s Struggle
+I married the woman I’d fallen in love with at first sight. A decade later, married life wasn’t easy. There was constant pressure. I had a demanding job. The kids were restless and loud, driving me up the wall at times. And Samreen just wasn’t there when I needed her. I wanted to escape it all… even if it only gave me momentary pleasure. On my phone, just a few clicks were all it took to give me the fleeting fulfilment I craved. But it was never enough.
+
+Sometimes, love wasn't enough to keep 
+the pieces of a marriage from breaking apart.
+`
     }
   ];
 
@@ -78,7 +125,8 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
       
       // Check if line contains character headings (ends with specific character names)
       if (line.includes("Struggles") || line.includes("Obsession") || line.includes("Rage") || 
-          line.includes("Determination") || line.includes("Resolve") || line.includes("Redemption") || 
+          line.includes("Determination") || line.includes("Resolve") || line.includes("Resilience") || 
+          line.includes("Struggle") || line.includes("Redemption") || 
           line.includes("Strength")) {
         return (
           <div key={`heading-${uniqueKey}`} className="font-bold mt-4 first:mt-0">
@@ -114,10 +162,14 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
         <FadeContent duration={800} delay={400} blur={false}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
             {books.map((book) => (
-              <div key={book.id} className="flex flex-col items-center text-center group">
+              <div 
+                key={book.id} 
+                id={book.id === 3 ? 'book-3' : undefined}
+                className="flex flex-col items-center text-center group"
+              >
                 {/* Book Cover */}
                 <div className="relative mb-6 transform transition-transform duration-300 group-hover:scale-105">
-                  {book.available ? (
+                  {book.image ? (
                     <img
                       src={book.image}
                       alt={book.title}
@@ -147,10 +199,18 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
                   {/* View Blurb Button */}
                   <button
                     onClick={() => openModal(book.id - 1)} // Convert ID to index
-                    className={`group relative ${book.available ? 'flex-1' : 'px-4 py-2 mx-auto'} bg-white border-2 border-gold rounded-2xl ${book.available ? 'px-6 py-3' : ''} font-sans font-bold text-gold text-sm uppercase tracking-wider transition-all duration-300 ease-out shadow-md hover:shadow-lg hover:shadow-gold/20 transform hover:scale-[1.02] hover:-translate-y-0.5 overflow-hidden cursor-pointer`}
+                    className={`group relative ${book.available && book.amazonUrl ? 'flex-1' : 'px-4 py-2 mx-auto'} ${
+                      highlightedBook === book.id 
+                        ? 'bg-gold border-2 border-gold text-white animate-pulse shadow-lg shadow-gold/50' 
+                        : 'bg-white border-2 border-gold text-gold'
+                    } rounded-2xl ${book.available && book.amazonUrl ? 'px-6 py-3' : ''} font-sans font-bold text-sm uppercase tracking-wider transition-all duration-300 ease-out shadow-md hover:shadow-lg hover:shadow-gold/20 transform hover:scale-[1.02] hover:-translate-y-0.5 overflow-hidden cursor-pointer`}
                   >
                     {/* Subtle background shift on hover */}
-                    <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                    <div className={`absolute inset-0 ${
+                      highlightedBook === book.id 
+                        ? 'bg-gold/20' 
+                        : 'bg-gold/5'
+                    } opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl`}></div>
                     
                     {/* Minimal shimmer */}
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500">
@@ -158,11 +218,13 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
                     </div>
                     
                     {/* Button text */}
-                    <span className="relative z-10">View Blurb</span>
+                    <span className="relative z-10">
+                      {highlightedBook === book.id ? 'Read Blurb' : 'View Blurb'}
+                    </span>
                   </button>
 
-                  {/* Buy Now Button (only for available books) */}
-                  {book.available && (
+                  {/* Buy Now Button (only for available books with Amazon URL) */}
+                  {book.available && book.amazonUrl && (
                     <a 
                       href={book.amazonUrl}
                       target="_blank"
@@ -188,8 +250,14 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
         </FadeContent>
       </div>
     </div>    {/* Modal */}    {isModalOpen && (
-      <div className={`fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm transition-all duration-300 ease-out ${showModal ? 'opacity-100' : 'opacity-0'}`}>
-        <div className={`relative bg-purple rounded-2xl shadow-2xl max-w-5xl mx-4 p-6 sm:p-8 lg:p-12 max-h-[90vh] overflow-y-auto scrollbar-custom transform transition-all duration-300 ease-out ${showModal ? 'scale-100 opacity-100 translate-y-0' : 'scale-95 opacity-0 translate-y-4'}`}>
+      <div 
+        className={`fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm transition-all duration-300 ease-out ${showModal ? 'opacity-100' : 'opacity-0'}`}
+        onClick={closeModal}
+      >
+        <div 
+          className={`relative bg-purple rounded-2xl shadow-2xl max-w-5xl mx-4 p-6 sm:p-8 lg:p-12 max-h-[90vh] overflow-y-auto scrollbar-custom transform transition-all duration-300 ease-out ${showModal ? 'scale-100 opacity-100 translate-y-0' : 'scale-95 opacity-0 translate-y-4'}`}
+          onClick={(e) => e.stopPropagation()}
+        >
           
           {/* Close Button */}
           <button
@@ -203,7 +271,7 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
             
             {/* Book Cover */}
             <div className="flex-shrink-0">
-              {books[selectedBook].available ? (
+              {books[selectedBook].image ? (
                 <img 
                   src={books[selectedBook].image} 
                   alt={books[selectedBook].title}

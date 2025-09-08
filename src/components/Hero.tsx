@@ -2,7 +2,7 @@ import React from 'react';
 import FadeContent from './Animations/FadeContent/FadeContent';
 import SplitText from './TextAnimations/SplitText/SplitText';
 import backgroundImage from '../assets/images/background.webp';
-import bookTwoImage from '../assets/images/booktwo.webp';
+import bookThreeImage from '../assets/images/bookthree.webp';
 
 const Hero: React.FC = () => {
   return (
@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
               
               {/* Book Image with enhanced hover effect */}
               <img 
-                src={bookTwoImage} 
+                src={bookThreeImage} 
                 alt="Facing Fate Book Cover" 
                 className="w-56 sm:w-56 md:w-64 lg:w-64 h-auto shadow-2xl"
               />
@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
         {/* Text Content - Second on mobile, right on desktop */}
         <div className="flex-1 max-w-xl lg:ml-12 text-center mb-6 lg:mb-0">
           <SplitText
-            text="Recent Release: FORGIVING YOU"
+            text="COMING SOON: October 2025"
             className="font-sans font-semibold text-md sm:text-md md:text-md lg:text-lg xl:text-md text-light-brown mb-1 lg:mb-1 leading-tight"
             delay={100}
             duration={0.8}
@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
             rootMargin="-50px"
           />
           <SplitText
-            text="GET YOUR OWN COPY NOW!"
+            text="FORGETTING LOVE"
             className="font-display font-black text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-dark-brown mb-4 lg:mb-6 leading-tight"
             delay={100}
             duration={0.8}
@@ -66,9 +66,7 @@ const Hero: React.FC = () => {
           
           <FadeContent duration={600} delay={800} blur={false}>
             <a 
-              href="https://www.amazon.com/Forgiving-You-Dublin-Sisters-Book-ebook/dp/B0FD9H4HQ6?ref_=ast_author_mpb"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/books#book-3"
               className="group relative inline-block bg-gold border-2 sm:border-1 lg:border-2 rounded-xl border-dark-brown px-10 sm:px-8 py-3.5 sm:py-2.5 font-sans font-black text-white text-lg sm:text-base uppercase tracking-wider transition-all duration-500 ease-out shadow-lg hover:shadow-2xl hover:shadow-gold/50 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
             >
               {/* Gradient overlay */}
@@ -84,7 +82,7 @@ const Hero: React.FC = () => {
               
               {/* Button text */}
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-                BUY NOW
+                READ BLURB
               </span>
             </a>
           </FadeContent>

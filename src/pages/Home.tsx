@@ -30,7 +30,7 @@ const Home: React.FC = () => {
         title="Hayat Khan - Dublin Sisters Series Author"
         description="Welcome to the official website of Hayat Khan, author of the Dublin Sisters series. Discover captivating novels featuring strong characters, beautiful storytelling, and immersive world-building."
         url="https://hayatkhantheauthor.com"
-        image="/src/assets/images/logo.webp"
+        image="https://hayatkhantheauthor.com/images/logo.webp"
         imageAlt="Hayat Khan - Author of Dublin Sisters Series"
       />
       <Hero />
