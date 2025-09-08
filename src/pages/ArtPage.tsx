@@ -35,7 +35,7 @@ const ArtPage: React.FC = () => {
         title="Character Art & Dublin Sisterverse | Hayat Khan"
         description="Explore exclusive character artwork and beautiful illustrations from the Dublin Sisters series and extended universe by Hayat Khan."
         url="https://hayatkhantheauthor.com/art"
-        image="/src/assets/images/charart1.webp"
+        image="/src/assets/images/LoughLily.jgp"
         imageAlt="Character Art from Dublin Sisters Series"
       />
       <Art />
