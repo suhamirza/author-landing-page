@@ -87,8 +87,8 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
       id: 3,
       title: "Forgetting Love", 
       image: bookThreeImage,
-      available: false,
-      amazonUrl: "",
+      available: true,
+      amazonUrl: "https://a.co/d/724zJzp",
       blurb: `A raw and heartfelt story of lost love, broken promises, and the battle against temptation.
 
 Samreen’s Resilience
