@@ -3,6 +3,7 @@ import FadeContent from './Animations/FadeContent/FadeContent';
 import SplitText from './TextAnimations/SplitText/SplitText';
 import backgroundImage from '../assets/images/background.webp';
 import bookThreeImage from '../assets/images/bookthree.webp';
+import bookFourImage from '../assets/images/bookfour.webp';
 
 const Hero: React.FC = () => {
   return (
@@ -29,8 +30,8 @@ const Hero: React.FC = () => {
               
               {/* Book Image with enhanced hover effect */}
               <img 
-                src={bookThreeImage} 
-                alt="Facing Fate Book Cover" 
+                src={bookFourImage} 
+                alt="Fated Hearts Book Cover" 
                 className="w-56 sm:w-56 md:w-64 lg:w-64 h-auto shadow-2xl"
               />
             </div>
@@ -40,7 +41,7 @@ const Hero: React.FC = () => {
         {/* Text Content - Second on mobile, right on desktop */}
         <div className="flex-1 max-w-xl lg:ml-12 text-center mb-6 lg:mb-0">
           <SplitText
-            text="RECENT RELEASE"
+            text="COMING SOON: APRIL 2026"
             className="font-sans font-semibold text-md sm:text-md md:text-md lg:text-lg xl:text-md text-light-brown mb-1 lg:mb-1 leading-tight"
             delay={100}
             duration={0.8}
@@ -52,7 +53,7 @@ const Hero: React.FC = () => {
             rootMargin="-50px"
           />
           <SplitText
-            text="FORGETTING LOVE"
+            text="FATED HEARTS"
             className="font-display font-black text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-dark-brown mb-4 lg:mb-6 leading-tight"
             delay={100}
             duration={0.8}
