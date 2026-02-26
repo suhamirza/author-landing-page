@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
         {/* Text Content - Second on mobile, right on desktop */}
         <div className="flex-1 max-w-xl lg:ml-12 text-center mb-6 lg:mb-0">
           <SplitText
-            text="COMING SOON: APRIL 2026"
+            text="COMING SOON"
             className="font-sans font-semibold text-md sm:text-md md:text-md lg:text-lg xl:text-md text-light-brown mb-1 lg:mb-1 leading-tight"
             delay={100}
             duration={0.8}
@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
               
               {/* Button text */}
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-                BUY NOW!
+                READ BLURB NOW!
               </span>
             </a>
           </FadeContent>
@@ -98,7 +98,7 @@ const Hero: React.FC = () => {
               <div key={`scroll-group-${i}`} className="flex space-x-12 whitespace-nowrap flex-shrink-0">
                 {[...Array(20)].map((_, j) => (
                   <span key={`scroll-text-${i}-${j}`} className="text-dark-brown font-serif font-bold text-base">
-                    Buy now
+                    DUBLIN SISTERS
                   </span>
                 ))}
               </div>

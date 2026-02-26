@@ -127,8 +127,16 @@ const Footer: React.FC = () => {
                     >
                       FORGIVING YOU
                     </a>
+                    <a 
+                      href="https://www.amazon.com/Forgetting-Love-Dublin-Sisters-Hayat/dp/1806051060" 
+                      target='_blank'
+                      className="font-serif font-medium text-dark-brown text-xs sm:text-sm hover:text-gold transition-colors duration-300 underline decoration-1 underline-offset-4"
+                    >
+                      FORGETTING LOVE
+                    </a>
                   </div>
                 </div>
+                
 
                 {/* Art Section */}
                 <div className="text-center min-w-[120px]">
@@ -186,7 +194,7 @@ const Footer: React.FC = () => {
                   </div>
                 </div>  
                 {/* Easy to add more sections here with same structure */}
-                
+              
               </div>
             </div>
           </FadeContent>
@@ -384,7 +392,7 @@ const Footer: React.FC = () => {
         <FadeContent duration={600} delay={1200} blur={false}>
           <div className="hidden lg:flex lg:justify-between lg:items-center lg:pl-8 lg:pr-8">
             <p className="font-serif font-bold text-dark-brown text-xs sm:text-sm">
-              Copyright © HAYAT KHAN
+              Copyright © HAYAT KHAN 2026
             </p>
             <p className="font-serif font-bold text-dark-brown text-xs sm:text-sm">
               Designed with 💚 by Suha Mirza
@@ -393,7 +401,7 @@ const Footer: React.FC = () => {
           {/* Mobile Copyright */}
           <div className="lg:hidden flex flex-col items-center space-y-1">
             <p className="font-serif font-bold text-dark-brown text-xs sm:text-sm">
-              Copyright © HAYAT KHAN
+              Copyright © HAYAT KHAN 2026
             </p>
             <p className="font-serif font-bold text-dark-brown text-xs sm:text-sm">
               Designed with 💚 by Suha Mirza

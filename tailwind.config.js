@@ -97,6 +97,25 @@ export default {
             background: 'linear-gradient(135deg, #8B5A8C, #6B4C6B)',
           },
         },
+        '.scrollbar-red': {
+          'scrollbar-width': 'thin',
+          'scrollbar-color': '#B05454 #F5D5D5',
+          '&::-webkit-scrollbar': {
+            width: '8px',
+          },
+          '&::-webkit-scrollbar-track': {
+            background: '#FAE8E8',
+            borderRadius: '10px',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            background: 'linear-gradient(135deg, #C97070, #B05454)',
+            borderRadius: '10px',
+            border: '1px solid #8B3E3E',
+          },
+          '&::-webkit-scrollbar-thumb:hover': {
+            background: 'linear-gradient(135deg, #B05454, #8B3E3E)',
+          },
+        },
         '.scrollbar-blue': {
           'scrollbar-width': 'thin',
           'scrollbar-color': '#6B7FBF #E8EAFF',

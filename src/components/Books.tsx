@@ -3,6 +3,7 @@ import FadeContent from './Animations/FadeContent/FadeContent';
 import bookOneImage from '../assets/images/bookone.webp';
 import bookTwoImage from '../assets/images/booktwo.webp'
 import bookThreeImage from '../assets/images/bookthree.webp';;
+import bookFourImage from '../assets/images/bookfour.webp';
 
 const Books: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -52,6 +53,8 @@ const Books: React.FC = () => {
       image: bookOneImage,
       available: true,
       amazonUrl: "https://www.amazon.com/Facing-Fate-Dublin-Sisters-Book-ebook/dp/B0DXDMGGZ9",
+      modalBgColor: "bg-purple-100",
+      modalScrollColor: "scrollbar-custom",
       blurb: `A mesmerising tale of love, passion, betrayal and revenge.
 
 Nawal's Struggles
@@ -69,6 +72,8 @@ Life was never fair. Those who should have protected him treated him unjustly, a
       image: bookTwoImage,
       available: true,
       amazonUrl: "https://www.amazon.com/Forgiving-You-Dublin-Sisters-Book-ebook/dp/B0FD9H4HQ6?ref_=ast_author_mpb", // Update with actual URL
+      modalBgColor: "bg-purple-100",
+      modalScrollColor: "scrollbar-custom",
       blurb: `A stirring journey of love and redemption where forgiveness mends hearts and love redeems even the darkest of souls.
 
 Nawal's Determination
@@ -89,6 +94,8 @@ Life was lonely, until he came into her world, giving her a gift she'd never dre
       image: bookThreeImage,
       available: true,
       amazonUrl: "https://a.co/d/724zJzp",
+      modalBgColor: "bg-blue-100",
+      modalScrollColor: "scrollbar-blue",
       blurb: `A raw and heartfelt story of lost love, broken promises, and the battle against temptation.
 
 Samreen’s Resilience
@@ -99,6 +106,16 @@ I married the woman I’d fallen in love with at first sight. A decade later, ma
 
 Sometimes, love wasn't enough to keep 
 the pieces of a marriage from breaking apart.
+`
+    },
+    {
+      id: 4,
+      title: "Fated Hearts", 
+      image: bookFourImage,
+      available: false,
+      modalBgColor: "bg-red-100",
+      modalScrollColor: "scrollbar-red",
+      blurb: `Coming soon, stay tuned!
 `
     }
   ];
@@ -123,11 +140,7 @@ the pieces of a marriage from breaking apart.
       // Create a unique key based on content and position
       const uniqueKey = line ? `${line.slice(0, 20)}-${index}` : `empty-${index}`;
       
-      // Check if line contains character headings (ends with specific character names)
-      if (line.includes("Struggles") || line.includes("Obsession") || line.includes("Rage") || 
-          line.includes("Determination") || line.includes("Resolve") || line.includes("Resilience") || 
-          line.includes("Struggle") || line.includes("Redemption") || 
-          line.includes("Strength")) {
+      if (/^[A-Z][a-z]+['\u2019]s [A-Z][a-z]+$/.test(line.trim())) {
         return (
           <div key={`heading-${uniqueKey}`} className="font-bold mt-4 first:mt-0">
             {line}
@@ -255,7 +268,7 @@ the pieces of a marriage from breaking apart.
         onClick={closeModal}
       >
         <div 
-          className={`relative ${books[selectedBook].id === 3 ? 'bg-blue-100' : 'bg-purple-100'} rounded-2xl shadow-2xl max-w-5xl mx-4 p-6 sm:p-8 lg:p-12 max-h-[90vh] overflow-y-auto ${books[selectedBook].id === 3 ? 'scrollbar-blue' : 'scrollbar-custom'} transform transition-all duration-300 ease-out ${showModal ? 'scale-100 opacity-100 translate-y-0' : 'scale-95 opacity-0 translate-y-4'}`}
+          className={`relative ${books[selectedBook].modalBgColor} rounded-2xl shadow-2xl max-w-5xl mx-4 p-6 sm:p-8 lg:p-12 max-h-[90vh] overflow-y-auto ${books[selectedBook].modalScrollColor} transform transition-all duration-300 ease-out ${showModal ? 'scale-100 opacity-100 translate-y-0' : 'scale-95 opacity-0 translate-y-4'}`}
           onClick={(e) => e.stopPropagation()}
         >
           
