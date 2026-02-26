@@ -14,16 +14,15 @@ const Books: React.FC = () => {
   // Handle highlighting when component mounts
   useEffect(() => {
     // Check if we should highlight the third book based on URL hash
-    if (window.location.hash === '#book-3') {
-      // Scroll to the third book and highlight it
+    if (window.location.hash === '#book-4') {
       setTimeout(() => {
-        const bookElement = document.getElementById('book-3');
+        const bookElement = document.getElementById('book-4');
         if (bookElement) {
           bookElement.scrollIntoView({ 
             behavior: 'smooth', 
             block: 'center' 
           });
-          setHighlightedBook(3);
+          setHighlightedBook(4);
           
           // Remove highlight after 4 seconds
           setTimeout(() => {
@@ -177,7 +176,7 @@ the pieces of a marriage from breaking apart.
             {books.map((book) => (
               <div 
                 key={book.id} 
-                id={book.id === 3 ? 'book-3' : undefined}
+                id={book.id === 4 ? 'book-4' : undefined}
                 className="flex flex-col items-center text-center group"
               >
                 {/* Book Cover */}

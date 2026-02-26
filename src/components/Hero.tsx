@@ -67,8 +67,7 @@ const Hero: React.FC = () => {
           
           <FadeContent duration={600} delay={800} blur={false}>
             <a 
-              href="https://a.co/d/724zJzp"
-              target='_blank'
+              href="/books#book-4"
               className="group relative inline-block bg-gold border-2 sm:border-1 lg:border-2 rounded-xl border-dark-brown px-10 sm:px-8 py-3.5 sm:py-2.5 font-sans font-black text-white text-lg sm:text-base uppercase tracking-wider transition-all duration-500 ease-out shadow-lg hover:shadow-2xl hover:shadow-gold/50 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
             >
               {/* Gradient overlay */}
