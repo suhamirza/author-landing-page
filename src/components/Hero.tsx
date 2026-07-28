@@ -39,35 +39,43 @@ const Hero: React.FC = () => {
         </FadeContent>
 
         {/* Text Content - Second on mobile, right on desktop */}
-        <div className="flex-1 max-w-xl lg:ml-12 text-center mb-6 lg:mb-0">
-          <SplitText
-            text="COMING SOON"
-            className="font-sans font-semibold text-md sm:text-md md:text-md lg:text-lg xl:text-md text-light-brown mb-1 lg:mb-1 leading-tight"
-            delay={100}
-            duration={0.8}
-            ease="power3.out"
-            splitType="words"
-            from={{ opacity: 0, y: 50 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.1}
-            rootMargin="-50px"
-          />
-          <SplitText
-            text="FATED HEARTS"
-            className="font-display font-black text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-dark-brown mb-4 lg:mb-6 leading-tight"
-            delay={100}
-            duration={0.8}
-            ease="power3.out"
-            splitType="words"
-            from={{ opacity: 0, y: 50 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.1}
-            rootMargin="-50px"
-          />
+        <div className="flex-1 max-w-xl lg:ml-12 flex flex-col items-center text-center mb-6 lg:mb-0">
+          <div className="flex flex-col items-center w-full">
+            <div className="w-full flex justify-center">
+              <SplitText
+                text="OUT NOW!"
+                className="font-sans font-semibold text-md sm:text-md md:text-md lg:text-lg xl:text-md text-light-brown mb-1 lg:mb-1 leading-tight"
+                delay={100}
+                duration={0.8}
+                ease="power3.out"
+                splitType="words"
+                from={{ opacity: 0, y: 50 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-50px"
+              />
+            </div>
+            <div className="w-full flex justify-center">
+              <SplitText
+                text="FATED HEARTS"
+                className="font-display font-black text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-dark-brown mb-4 lg:mb-6 leading-tight"
+                delay={100}
+                duration={0.8}
+                ease="power3.out"
+                splitType="words"
+                from={{ opacity: 0, y: 50 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-50px"
+              />
+            </div>
+          </div>
           
           <FadeContent duration={600} delay={800} blur={false}>
             <a 
-              href="/books#book-4"
+              href="https://www.amazon.com/Fated-Hearts-Enemies-Lovers-Convenience-ebook/dp/B0GXGC18QR"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-block bg-gold border-2 sm:border-1 lg:border-2 rounded-xl border-dark-brown px-10 sm:px-8 py-3.5 sm:py-2.5 font-sans font-black text-white text-lg sm:text-base uppercase tracking-wider transition-all duration-500 ease-out shadow-lg hover:shadow-2xl hover:shadow-gold/50 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
             >
               {/* Gradient overlay */}
@@ -83,7 +91,7 @@ const Hero: React.FC = () => {
               
               {/* Button text */}
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-                READ BLURB NOW!
+                BUY NOW!
               </span>
             </a>
           </FadeContent>

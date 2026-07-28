@@ -111,11 +111,33 @@ the pieces of a marriage from breaking apart.
       id: 4,
       title: "Fated Hearts", 
       image: bookFourImage,
-      available: false,
+      available: true,
+      amazonUrl: "https://www.amazon.com/Fated-Hearts-Enemies-Lovers-Convenience-ebook/dp/B0GXGC18QR",
       modalBgColor: "bg-red-100",
       modalScrollColor: "scrollbar-red",
-      blurb: `Coming soon, stay tuned!
-`
+      blurb: `A tale of two broken souls, bound by fate, learning to heal their hearts and find love.
+
+Amal's Defiance
+In every phase of my life, I have known loss.
+I lost my mother. I lost my sister. And I was left surviving the aftermath of a marriage that should never have happened.
+Still, I gathered the broken, bitter pieces of my life and carried on.
+I poured love, care, and whatever sweetness I had left into the people who still needed me. I was no longer living for myself, but for those closest to my heart… for the innocent souls who deserved everything.
+But with them came their father.
+The man I couldn't stand.
+The man I didn't trust.
+Yet life kept forcing us into the same space, and the lines I had drawn so carefully began to blur.
+The man I swore to keep at a distance became the one presence I could not ignore… the one I found myself turning to, whether I wanted to or not.
+
+Saad's Guilt
+I was a broken man, carrying a guilt that refused to loosen its grip.
+Grief does not heal when you believe you are the cause of it.
+Still, I woke each day for my daughters. I smiled for them. I kept moving, kept working, kept breathing — not living, just surviving. Because they needed me, and that had to be enough.
+I told myself I could do it alone.
+Then she stepped into my life, fierce and unrelenting, her eyes holding me accountable for everything I had failed to be. She refused to accept my distance. Refused to let me hide behind silence.
+I resisted. She stayed.
+And somewhere in that stubborn presence, in the space between anger and understanding, I found something I never expected to feel again.
+Hope.
+Because the woman who challenged me the most… was also the one who slowly taught my heart how to live again.`
     }
   ];
 
